@@ -17,6 +17,11 @@ Task 2
 abc module
 Consider the following class diagram: class diagram
 
+
+![iagram.PNG](https://github.com/P23-E06/python-oop-in-practice-tools-and-workers-BlackWaterPark0011010111/blob/main/class_diagram.PNG)
+
+
+
 The class Worker is the abstract base class and its subclasses are Programmer and Janitor. Complete the code in file src/worker.py so that:
 
  The class Worker is an abstract class i.e., it inherits from the Abstract Base Class ABC.
