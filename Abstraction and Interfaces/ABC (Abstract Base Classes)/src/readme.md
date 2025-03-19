@@ -18,7 +18,7 @@ abc module
 Consider the following class diagram: class diagram
 
 
-![iagram.PNG](https://github.com/P23-E06/python-oop-in-practice-tools-and-workers-BlackWaterPark0011010111/blob/main/class_diagram.PNG)
+![diagram.PNG](https://github.com/BlackWaterPark0011010111/Object-Oriented-Programming-OOP-/blob/main/Abstraction%20and%20Interfaces/ABC%20(Abstract%20Base%20Classes)/src/class_diagram.PNG)
 
 
 
