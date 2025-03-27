@@ -12,7 +12,7 @@ def create_person(name: str, age: int, hobbies: Optional[List[str]] = None) -> D
     return {
         "name": name,
         "age": age,
-        "hobbies": hobbies if hobbies else []
+        "hobbies": hobbies if hobbies else [] 
     }
 
 def get_coordinates() -> Tuple[float, float]:
