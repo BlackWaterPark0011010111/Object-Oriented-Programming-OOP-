@@ -53,8 +53,8 @@ UserId = int
 UserDict = Dict[str, Union[str, List[str]]]
 print("----------------------------------------------10-----")
 
+"""fetch user data with custom type aliases."""
 def get_user(user_id: UserId) -> UserDict:
-    """fetch user data with custom type aliases."""
     return {"id": user_id, "name": "Alice", "tags": ["python", "coding"]}
 
 
