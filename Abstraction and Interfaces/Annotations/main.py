@@ -1,6 +1,3 @@
-#dataclasses for simplicity and typing for annotations.
-
-
 from dataclasses import dataclass
 from typing import List, Optional
 
