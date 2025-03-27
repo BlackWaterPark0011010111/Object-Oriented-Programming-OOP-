@@ -3,6 +3,7 @@ from typing import List, Optional
 
 @dataclass
 class Student:
+    
     name: str
     age: int
     grade: int
