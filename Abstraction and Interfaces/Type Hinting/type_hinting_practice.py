@@ -1,35 +1,48 @@
 
 from typing import List, Dict, Tuple, Union, Optional, Set, Callable
 import datetime
-
+"""add two integers and return the result."""
+print("----------------------------------------------1-----")
 def add_numbers(a: int, b: int) -> int:
     return a + b
+print("----------------------------------------------2-----")
+"""Filter even numbers from a list."""
 
 def filter_even_numbers(numbers: List[int]) -> List[int]:
     return [num for num in numbers if num % 2 == 0]
-
+print("----------------------------------------------3-----")
+"""create a person dictionary with type hints."""
 def create_person(name: str, age: int, hobbies: Optional[List[str]] = None) -> Dict[str, Union[str, int, List[str]]]:
     return {
         "name": name,
         "age": age,
         "hobbies": hobbies if hobbies else [] 
     }
+print("--------------------------------------------4-------")
+"""return (latitude, longitude) as a tuple."""
 
 def get_coordinates() -> Tuple[float, float]:
     return (40.7128, -74.0060)  # New York
-
+print("---------------------------------------------5------")
+"""process input that can be either string or integer."""
 def process_input(value: Union[str, int]) -> str:
     return str(value).upper()
-
+print("----------------------------------------------6-----")
+"""simulate a user search (may return None)."""
 def find_user(username: str) -> Optional[Dict[str, str]]:
     users = {"alice": {"role": "admin"}, "bob": {"role": "user"}}
     return users.get(username)
-
+print("----------------------------------------------7-----")
+"""Return a set of unique words."""
 def count_unique_words(words: List[str]) -> Set[str]:
     return set(words)
+print("----------------------------------------------8-----")
+"""apply a function to two integers."""
 
 def apply_operation(x: int, y: int, operation: Callable[[int, int], int]) -> int:
     return operation(x, y)
+print("---------------------------------------------9------")
+"""calculate days remaining until New Year."""
 
 def days_until_new_year() -> int:
     today = datetime.date.today()
@@ -38,9 +51,10 @@ def days_until_new_year() -> int:
 
 UserId = int
 UserDict = Dict[str, Union[str, List[str]]]
+print("----------------------------------------------10-----")
 
 def get_user(user_id: UserId) -> UserDict:
-    """Fetch user data with custom type aliases."""
+    """fetch user data with custom type aliases."""
     return {"id": user_id, "name": "Alice", "tags": ["python", "coding"]}
 
 
