@@ -21,6 +21,5 @@ def fibonacci(n: int) -> int:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
-# Пример
 if __name__ == "__main__":
     print("Fibonacci(10):", fibonacci(10))  # 55 (кэшируется)
