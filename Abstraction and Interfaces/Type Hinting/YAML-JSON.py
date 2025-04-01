@@ -46,3 +46,21 @@ def load_config(path: str) -> Config:
         return json.load(f)
 
 if __name__ == "__main__":
+    # Полноценный конфиг,все поддерживаемые типы
+    valid_config: Config = {
+        "api_key": "12345",  # токен для API
+        "timeout": 10,  #в секундах
+        "plugins": ["plugin1", "plugin2"],  #список активных плагинов
+        "settings": {
+            "debug": False,  # флаг отладки
+            "threshold": 0.5,  # Пороговое значение
+            "mode": "enable"  # Режим работы только если enable/disable
+        }
+    }  
+    
+    print("Конфиг валиден?", validate_config(valid_config))  #должно быть True
+    
+    # прорабатываем полный цикл, сохраняем → загружаем → используем
+    save_config(valid_config, "config.json")  # сохраняем на диск
+    loaded_config = load_config("config.json")  # загрузка с диска
+    print("Загруженный конфиг:", loaded_config)  # Должен совпадать с оригиналом 
