@@ -27,7 +27,6 @@ def process_with_plugins(data: str, plugins: List[Plugin]) -> str:
         result = plugin.run(result)
     return result
 
-# Пример
 if __name__ == "__main__":
     plugins: List[Plugin] = [UppercasePlugin(), ReversePlugin()]
     print("Result:", process_with_plugins("hello", plugins))  # "OLLEH"
