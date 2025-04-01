@@ -61,7 +61,7 @@ if __name__ == "__main__":
             "threshold": 0.5,  # Пороговое значение
             "mode": "enable"  # Режим работы (только "enable"/"disable")
         }
-    }
+    }  
     
     print("Конфиг валиден?", validate_config(valid_config))  # Должно быть True
     
