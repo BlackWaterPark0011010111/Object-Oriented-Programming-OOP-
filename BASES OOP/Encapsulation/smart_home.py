@@ -1,6 +1,6 @@
 
 
-# Класс умного устройства
+# Класс умного устройства  Smart device class
 class SmartDevice:
     def __init__(self, name, power_status=False):
         self._name = name
