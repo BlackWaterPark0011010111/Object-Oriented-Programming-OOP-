@@ -15,7 +15,7 @@ class SmartDevice:
         print(f"{self._name} выключено.")
     
     def get_status(self):
-        return "Включено" if self._power_status else "Выключено"
+        return "On" if self._power_status else "Off"
     
     def __str__(self):
         return f"SmartDevice[name={self._name}, status={self.get_status()}]"
