@@ -1,5 +1,10 @@
 #The main topic
 print("==================================================================1===")
+"""# Each component (Processor, RAM, HardDrive) should have its own class, which can be used independently.
+# We attach other classes, and one object consists of other objects. 
+# Instead of inheriting from a class, we create its instance inside another class.
+"""
+
 # по компонентам (Processor, RAM, HardDrive) —  должны быть отдельные классы, которые можно использовать независимо.
 #мы присоединяем другие классы и один объект состоит из других объектов. Вместо наследования от класса,  создаем его экземпляр внутри другого класса.
 class Processor:
@@ -25,14 +30,16 @@ class HardDrive:
 
     def info(self):
         return f"STORAGE: {self.capacity}GB"
-
+"""# We do not inherit the Computer class from these classes because it should contain them (composition).
+# We can modify this class by changing its components.
+"""
 # не наследуем класс Computer от этих классов,потому что он должен содержать их внутри себя (композиция)
 # мы можнм модифицировать этот класс, меняя компоненты.
 class Computer:
     def __init__(self, processor, ram, hard_drive):
-        self.processor = processor  # содержание процессора   композиция
-        self.ram = ram  #оперативная память                   композиция
-        self.hard_drive = hard_drive  #харды                  композиция
+        self.processor = processor  # содержание процессора Processor components композиция composition
+        self.ram = ram  #оперативная память    memory                            композиция composition
+        self.hard_drive = hard_drive  #харды   hards                             композиция composition
 
     def show_specs(self):
         print(self.processor.info())
