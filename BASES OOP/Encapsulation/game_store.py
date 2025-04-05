@@ -8,19 +8,18 @@ class Game:
     def buy(self):  #метод для покупки   method for purchasing
         if not self.is_bought:  #если игра ещё не куплена  if the game is not purchased yet
             self.is_bought = True  #меняем статус на "куплено"  change the status to "purchased"
-            print(f"Игра '{self.name}' куплена за {self.price} рублей!")
+            print(f"Game '{self.name}' was purchased for {self.price} rubles!")
         else:
-            print(f"Игра '{self.name}' уже куплена!")  
+            print(f"Game '{self.name}' has already been purchased!") 
 
-    def __str__(self):  #для вывода информации об игре
-        return f"Игра: {self.name}, Цена: {self.price} руб., Куплена: {'Да' if self.is_bought else 'Нет'}"
+    def __str__(self):  #для вывода информации об игре to display information about the game
+        return f"Game: {self.name}, Price: {self.price} rub., Purchased: {'Yes' if self.is_bought else 'No'}"
 
-
-# Класс пользователя
+# Класс пользователя  user class
 class User:
-    def __init__(self, username, balance=0):  #имя пользователя и баланс
-        self.username = username  #имя пользователя
-        self.balance = balance  #баланс (деньги на счету)
+    def __init__(self, username, balance=0):  #имя пользователя и баланс username and balance
+        self.username = username  #имя пользователя user name
+        self.balance = balance  #баланс (деньги на счету) balance (money on u`re accaunt`)
         self.library = []  #библиотека игр (тут будут купленные игры)
 
     def add_money(self, amount):  #метод для пополнения баланса
