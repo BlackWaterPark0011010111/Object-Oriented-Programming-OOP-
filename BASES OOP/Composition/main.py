@@ -47,15 +47,15 @@ class Computer:
         print(self.hard_drive.info())
 
 
-#Cоздаем компоненты
-cpu = Processor("INTEL i5", 4)# Создание компонентов
+#Cоздаем компоненты   creating a components
+cpu = Processor("INTEL i5", 4)# Создание компонентов  creating a components
 ram = RAM(8)
 storage = HardDrive(256)
 
 
-my_pc = Computer(cpu, ram, storage)# Cобираем все вместе 
+my_pc = Computer(cpu, ram, storage)# Cобираем все вместе  Bringing everything together
 
-#характеристика
+#характеристика   Characteristic
 my_pc.show_specs()
 
 
@@ -70,7 +70,7 @@ class Engine:
 class Car:
     def __init__(self, model, engine_power):
         self.model = model
-        self.engine = Engine(engine_power)  # композиция
+        self.engine = Engine(engine_power)  # композиция   composition
 
     def drive(self):
         return f"{self.model} IS DRIVING WITH {self.engine.horsepower} HP!"
@@ -89,12 +89,12 @@ class Keyboard:
 
 class Laptop:
     def __init__(self):
-        self.screen = Screen()  # композиция
-        self.keyboard = Keyboard()#композиция
+        self.screen = Screen()  # композиция  composition
+        self.keyboard = Keyboard()#композицияcomposition
 
     def use(self):
         return f"{self.screen.display()} | {self.keyboard.type()}"
 
-# И вывод характеристики
+# И вывод характеристики   and output of the characteristics
 my_laptop = Laptop()
 print(my_laptop.use()) 
