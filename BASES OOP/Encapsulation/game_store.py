@@ -69,11 +69,11 @@ user.add_money(1000)  #пополняем баланс на 1000   top up your b
 user.buy_game(game2)  #теперь покупаем Киберпанк 2077    now buy cyberpank
 user.buy_game(game3)  #покупаем "Майнкрафт"       buy "Minecraft"
 
-#  библиотека игр
+#  библиотека игр   library
 user.show_library()
 
-# Пытаемся купить игру ещё раз
-user.buy_game(game1)  # игра уже куплена
+# Пытаемся купить игру ещё раз  trying to buy the game one more time
+user.buy_game(game1)  # игра уже куплена  the game has already been purchased
 
-# итог
+# итог   summary
 print(user)
