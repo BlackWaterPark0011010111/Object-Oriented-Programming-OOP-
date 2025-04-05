@@ -3,11 +3,11 @@ class Game:
     def __init__(self, name, price):  
         self.name = name  
         self.price = price 
-        self.is_bought = False  #куплена ли игра, по умолчанию False
+        self.is_bought = False  #куплена ли игра, по умолчанию False  whether the game is purchased, default is False
 
-    def buy(self):  #метод для покупки 
-        if not self.is_bought:  #если игра ещё не куплена
-            self.is_bought = True  #меняем статус на "куплено"
+    def buy(self):  #метод для покупки   method for purchasing
+        if not self.is_bought:  #если игра ещё не куплена  if the game is not purchased yet
+            self.is_bought = True  #меняем статус на "куплено"  change the status to "purchased"
             print(f"Игра '{self.name}' куплена за {self.price} рублей!")
         else:
             print(f"Игра '{self.name}' уже куплена!")  
