@@ -20,31 +20,30 @@ class User:
     def __init__(self, username, balance=0):  #имя пользователя и баланс username and balance
         self.username = username  #имя пользователя user name
         self.balance = balance  #баланс (деньги на счету) balance (money on u`re accaunt`)
-        self.library = []  #библиотека игр (тут будут купленные игры)
+        self.library = []  #библиотека игр (тут будут купленные игры) games library (purchased games will be here)
 
-    def add_money(self, amount):  #метод для пополнения баланса
-        if amount > 0:  #если сумма положительная
-            self.balance += amount  #добавляем деньги
-            print(f"Баланс пополнен на {amount} руб. Теперь у вас {self.balance} руб.")
+    def add_money(self, amount):  #метод для пополнения баланса  method for replenishing the balance
+        if amount > 0:  #если сумма положительная if the sum is positive
+            self.balance += amount  #добавляем деньги  add money
+            print(f"Balance replenished by {amount} rubles. Now you have {self.balance} rubles.")
         else:
-            print("Сумма должна быть больше нуля!")  #если сумма отрицательная или ноль
+            print("The sum must be greater than zero!") #if the sum is negative or zero
 
-    def buy_game(self, game):  #метод для покупки игры
-        if game.is_bought:  #если игра уже куплена
-            print(f"Игра '{game.name}' уже куплена!")
-        elif self.balance >= game.price:  #если денег хватает
-            self.balance -= game.price  #списываем деньги
-            game.buy()  #вызываем метод buy у игры
-            self.library.append(game)  #добавляем игру в библиотеку
-            print(f"Игра '{game.name}' добавлена в вашу библиотеку!")
+    def buy_game(self, game):  #метод для покупки игры  method for purchasing a game
+        if game.is_bought:  #если игра уже куплена   if the game is already purchased
+            print(f"Game '{game.name}' has already been purchased!")        
+        elif self.balance >= game.price:  #если денег хватает  if you have enough money
+            self.balance -= game.price  #списываем деньги write off money
+            game.buy()  #вызываем метод buy у игры  call the game's buy method
+            self.library.append(game)  #добавляем игру в библиотеку add game to library
+            print(f"Game '{game.name}' added to your library!")
         else:
-            print(f"Недостаточно денег для покупки игры '{game.name}'!")  #если денег нет
-
-    def show_library(self):  #смотрим библиотеку игр
-        if not self.library:  #если библиотека пуста
-            print("Ваша библиотека игр пуста :(")
+            print(f"Not enough money to buy game '{game.name}'!") #if no money
+    def show_library(self):  #смотрим библиотеку игр CHECKING THE GAME LIBRARY
+        if not self.library:  #если библиотека пуста iflibrary is empty
+            print("Your games library is empty :(") #u`re lib is empty`
         else:
-            print("Ваша библиотека игр:")
+            print("U`re game library:")
             for game in self.library:  #перебираем игры в библиотеке
                 print(f"- {game.name}")
 
