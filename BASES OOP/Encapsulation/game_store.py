@@ -44,21 +44,22 @@ class User:
             print("Your games library is empty :(") #u`re lib is empty`
         else:
             print("U`re game library:")
-            for game in self.library:  #перебираем игры в библиотеке
+            for game in self.library:  #перебираем игры в библиотеке  we are going through the games in the library
                 print(f"- {game.name}")
 
-    def __str__(self):   #для вывода информации о юзере
-        return f"Пользователь: {self.username}, Баланс: {self.balance} руб."
+    def __str__(self):   #для вывода информации о юзере  to display information about the user
+        return f"User: {self.username}, Balance: {self.balance} rub."
 
 
-game1 = Game("The Witcher 3", 1500)  #создаём Ведьмак 
-game2 = Game("Cyberpunk 2077", 2000)  #создаём  Киберпанк 2077
-game3 = Game("Minecraft", 1000)  #создаём  Майнкрафт
+game1 = Game("The Witcher 3", 1500)  #создаём Ведьмак  creating WITCHER
+game2 = Game("Cyberpunk 2077", 2000)  #создаём  Киберпанк 2077  CREATING CYBERPANK
+game3 = Game("Minecraft", 1000)  #создаём  Майнкрафт  CREATING MINECRAFT
 
 
 user = User("Gamer123", 3000)  #создаём пользователя с именем "Gamer123" и балансом 3000 руб.
+##create a user with the name "Gamer123" and a balance of 3000 rubles.
 
-#информация о пользователе
+#информация о пользователе #user info
 print(user)
 
 # Покупаем игры
