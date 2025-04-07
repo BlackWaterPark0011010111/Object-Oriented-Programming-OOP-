@@ -61,7 +61,7 @@ living_room.turn_on_all()# Включаем все устройства в ко�
 print(living_room)
 
 
-class SmartHome:# Класс умного дома
+class SmartHome:# Класс умного дома  smart house class
     def __init__(self, owner):
         self._owner = owner
         self._rooms = []
@@ -77,7 +77,7 @@ class SmartHome:# Класс умного дома
         return f"SmartHome[owner={self._owner}, rooms={[str(r) for r in self._rooms]}]"
 
 
-my_home = SmartHome("Алекс")# Создаём дом и добавляем комнаты
+my_home = SmartHome("Алекс")# Создаём дом и добавляем комнаты creating a house and adding the rooms
 my_home.add_room(living_room)
 
 
