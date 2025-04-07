@@ -28,8 +28,7 @@ class Pilot(Astronaut):
     def perform_task(self) -> str:  #polymorphism
         return f"{self._name} is piloting the spaceship."
 
-#Engineer astronaut (inherits from astronaut)
-class Engineer(Astronaut):
+class Engineer(Astronaut):  #Engineer astronaut (inherits from astronaut)
     def perform_task(self) -> str:  #polymorphism
         return f"{self._name} is repairing the spaceship."
 
@@ -38,18 +37,18 @@ class Engineer(Astronaut):
 class Spaceship:
     name: str
     capacity: int
-    astronauts: List[Astronaut] = None  #Composition: spaceship has astronauts
+    astronauts: List[Astronaut] = None  #composition: spaceship has astronauts
 
     def __post_init__(self):
         if self.astronauts is None:
             self.astronauts = []
 
-    def add_astronaut(self, astronaut: Astronaut):  #Composition: adding an astronaut
+    def add_astronaut(self, astronaut: Astronaut):  #composition: adding an astronaut
         if len(self.astronauts) >= self.capacity:
             raise ValueError("Spaceship is at full capacity!")
         self.astronauts.append(astronaut)
 
-    def __str__(self) -> str:  #Magic method for string representation
+    def __str__(self) -> str:  #magic method for string representation
         return f"Spaceship: {self.name}, Capacity: {self.capacity}, Astronauts: {len(self.astronauts)}"
 
 
@@ -57,7 +56,7 @@ class Spaceship:
 
 
 
-#MissionControlCenter (Singleton)
+#MissionControlCenter (singleton)
 class MissionControl:
     _instance = None
 
@@ -78,17 +77,17 @@ class MissionControl:
 class Mission:
     name: str
     spaceship: Spaceship 
-    #Composition: 
+    #composition: 
     astronauts: List[Astronaut]  #mission has astronauts
 #Polymorphism: 
     def start(self) -> str:  #astronaut performs their task
         tasks = [astronaut.perform_task() for astronaut in self.astronauts]
         return f"Mission {self.name} started!\n" + "\n".join(tasks)
 
-    def __str__(self) -> str:  #Magicmethod for string representation
+    def __str__(self) -> str:  #magicmethod for string representation
         return f"Mission: {self.name}, Spaceship: {self.spaceship.name}, Astronauts: {len(self.astronauts)}"
 
-# Factory Method to Create Astronauts
+# Factory method to create astronauts
 def create_astronaut(role: str, name: str, experience: int) -> Astronaut:
     if role == "Pilot":
         return Pilot(name, experience)
