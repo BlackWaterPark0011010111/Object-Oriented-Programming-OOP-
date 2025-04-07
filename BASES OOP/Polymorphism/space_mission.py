@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import List
 
-# AbstractBaseClass 
+# abstractbaseclass 
 class Astronaut(ABC):
     def __init__(self, name: str, experience: int):
-        self._name = name  #Encapsulation
+        self._name = name  #encapsulation
         self._experience = experience
 
     @property
@@ -17,7 +17,7 @@ class Astronaut(ABC):
         return self._experience
 
     @abstractmethod
-    def perform_task(self) -> str:  #Abstract method 
+    def perform_task(self) -> str:  #abstractmethod 
         pass
 
     def __str__(self) -> str:  #Magic method for string representation
@@ -25,16 +25,16 @@ class Astronaut(ABC):
 
 #Pilot Astronaut (inherits from Astronaut)
 class Pilot(Astronaut):
-    def perform_task(self) -> str:  #Polymorphism
+    def perform_task(self) -> str:  #polymorphism
         return f"{self._name} is piloting the spaceship."
 
-#Engineer Astronaut (inherits from Astronaut)
+#Engineer astronaut (inherits from astronaut)
 class Engineer(Astronaut):
-    def perform_task(self) -> str:  #Polymorphism
+    def perform_task(self) -> str:  #polymorphism
         return f"{self._name} is repairing the spaceship."
 
-#Spaceship Class
-@dataclass
+@dataclass#spaceship class
+
 class Spaceship:
     name: str
     capacity: int
