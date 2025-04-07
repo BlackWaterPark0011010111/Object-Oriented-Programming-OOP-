@@ -81,7 +81,7 @@ my_home = SmartHome("Алекс")# Создаём дом и добавляем �
 my_home.add_room(living_room)
 
 
-kitchen = Room("Кухня")# Добавляем еще одну комнату 
+kitchen = Room("Кухня")# Добавляем еще одну комнату adding another one room
 kettle = SmartDevice("Электрочайник")
 kitchen.add_device(kettle)
 my_home.add_room(kitchen)
@@ -89,5 +89,5 @@ my_home.add_room(kitchen)
 print(my_home)
 
 
-my_home.turn_off_all_devices()# Выключаем все устройства 
+my_home.turn_off_all_devices()# Выключаем все устройства  turning off all devisec
 print(my_home)
