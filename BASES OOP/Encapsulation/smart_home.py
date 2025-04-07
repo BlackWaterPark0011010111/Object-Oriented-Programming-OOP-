@@ -21,11 +21,11 @@ class SmartDevice:
         return f"SmartDevice[name={self._name}, status={self.get_status()}]"
 
 
-lamp = SmartDevice("Лампа в гостиной")#с отдельными устройствами
+lamp = SmartDevice("Lamp in a living room")#с отдельными устройствами
 lamp.turn_on()
 print(lamp)
 
-tv = SmartDevice("Телевизор")
+tv = SmartDevice("TV")
 tv.turn_off()
 print(tv)
 
@@ -50,7 +50,7 @@ class Room:
         return f"Room[name={self._name}, devices={[str(d) for d in self._devices]}]"
 
 
-living_room = Room("Гостиная")# Создаём комнату и добавляем устройства
+living_room = Room("Гостиная")# Создаём комнату и добавляем устройства making a room and adding device
 living_room.add_device(lamp)
 living_room.add_device(tv)
 print(living_room)
