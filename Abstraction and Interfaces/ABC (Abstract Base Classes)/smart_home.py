@@ -15,7 +15,7 @@ class Device(ABC):
         if not new_name:
             raise ValueError("Device name cannot be empty!")
         self._name = new_name
-#Abstract method (must be implemented in subclasses)
+#Abstract method (must be in subclasses)
     @abstractmethod
     def turn_on(self) -> str:  
         pass
@@ -112,4 +112,4 @@ if __name__ == "__main__":
         print(result)
 
     print("\nSystem Information:")
-    print(smart_home)
+    print(smart_home) 
