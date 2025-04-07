@@ -53,10 +53,11 @@ class Room:
 living_room = Room("Гостиная")# Создаём комнату и добавляем устройства making a room and adding device
 living_room.add_device(lamp)
 living_room.add_device(tv)
+
 print(living_room)
 
 
-living_room.turn_on_all()# Включаем все устройства в комнате
+living_room.turn_on_all()# Включаем все устройства в комнате turning on all devices in theh room
 print(living_room)
 
 
