@@ -1,18 +1,17 @@
 from password_generator_factory import PasswordGeneratorFactory
 
-# запуск, чтобы пользователь мог выбрать генератор
-if __name__ == "__main__":
-    print("выберите тип пароля:")
-    print("1 - только буквы (Alpha)")
-    print("2 - буквы и цифры (AlphaNumeric)")
-    
-    choice = input("введите 1 или 2: ")
-    generator_type = "Alpha" if choice == "1" else "AlphaNumeric" if choice == "2" else None
+def display_menu():
+    print("\n Password Generator")
+    print("1 - Letters only (Alpha)")
+    print("2 - Letters and numbers (AlphaNumeric)")
+    print("3 - Exit")
 
-    if generator_type:
-        generator = PasswordGeneratorFactory.create_object(generator_type)
-        if generator:
-            length = int(input("введите длину пароля: "))
-            print("сгенерированный пароль:", generator.generate(length))
-    else:
-        print("неправильный ввод, попробуйте снова")
+def get_password_length():
+    while True:
+        try:
+            length = int(input("Enter password length (8-64): "))
+            if 8 <= length <= 64:
+                return length
+            print("please enter a number between 8 and 64")
+        except ValueError:
+            print("invalid input. enter a number.")
