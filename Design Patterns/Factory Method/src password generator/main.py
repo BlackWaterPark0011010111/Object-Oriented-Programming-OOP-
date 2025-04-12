@@ -34,6 +34,17 @@ def main():
             print("invalid choice. try again.")
             continue
         
+        try:
+            generator = PasswordGeneratorFactory.create_object(generator_type)
+            if generator:
+                length = get_password_length()
+                password = generator.generate(length)
+                print(f"\ngenerated password: {password}")
+                print("password strength:", "★" * min(5, length//8))  # Simple strength indicator
+            else:
+                print("failed to create password generator")
+        except Exception as e:
+            print(f"an error occurred: {str(e)}")
 
 if __name__ == "__main__":
     main()
