@@ -1,3 +1,24 @@
+
+
+\\\\\\\\\\\\\\\\\\\\
+ENG
+\\\\\\\\\\\\\\\\\\\\
+
+
+This is like a kind of relationship between classes. In the base class, you define fields, methods, behaviors, and how everything's implemented. It’s basically a  "contract " saying all these methods and fields should be available to subclasses, and like, yeah, whether or not they can override them.
+
+Inheritance follows the DRY principle (Don’t Repeat Yourself)—to avoid copying the same stuff over and over. A subclass should be more specific than the base class. And since the subclass gets access to all the internals, that kinda breaks encapsulation, right? Like, it’s all out there.
+Now, let’s say we’ve got two totally separate classes — "Human" and "Doctor" — they’re not connected or anything. But we want them to have the same kind of behavior (like "genes", if you will). So if both should have a method like  "walk ", we’d have to copy that method into both classes. Like, literally the same function twice. That sucks.
+What we should do instead is inherit Doctor from Human. That way, all the shared behavior — the  "genes ", the methods, the common stuff — is just in one place, and the Doctor class just inherits it all. Clean and neat. If we ever have more classes, even in different files, it’s super easy to just give them the same shared stuff through inheritance. Like genetic code, but you don’t have to carry a baby for 9 months and lose your mind — it’s just a few lines of code. Wanna make the subclass behave like a psycho? Sure! Write some serial killer functions in the parent class and boom — it’s inherited.
+Now, if you ever wanna check if one class is a subclass of another, boom — that’s where issubclass comes in. Like:
+print(issubclass(Doctor, Human))  # --> True
+
+
+\\\\\\\\\\\\\\\\\\\\
+RUS
+\\\\\\\\\\\\\\\\\\\\
+
+
 Это тип отношений между классами. В базовом классе идентифицируются поля, методы, поведение, реализация. Это своего рода "контракт" о доступности всех методов и полей, следующие методы должны быть доступны классам-потомкам, и  можно ли их переопределять.
 Наследование следует принципу DRY (Don't Repeat Yourself) - избегаем повторения кода. Класс-потомок должен быть более специализирован, чем базовый класс. И поскольку подклассу доступны все детали, это говорит о том, что наследование нарушает принцип инкапсуляции.
 То есть если у нас есть 2 независимых класса Человек и Доктор, которые не имеют никакого отношения друг к другу, нам нужно, чтобы они могли выполнять одинаковое действие (то есть чтобы было схожее поведение, так сказать "гены"), то нам придётся прописать функцию-метод (например, "ходить") в первом классе и дублировать её во втором. То есть две одинаковые функции в разных классах. Это плохо.
@@ -20,8 +41,6 @@ print(issubclass(Doctor, Human))```
 Конечно, бывают случаи, где наследование действительно оправдано — например, в некоторых паттернах проектирования или когда фреймворк жёстко требует именно такой архитектуры. Но если уверенности нет — лучше десять раз подумать, прежде чем строить длинные цепочки наследования. Мертвецы говорят, что в 90% случаев композиция приводит к более гибкому и понятному коду.
 
 Главное что мне нужно запомнить с помощью топора над моей головой это то ,что  ООП — это не про то, чтобы тупо копировать структуры из реального мира в код, а про то, чтобы делать систему удобной для изменений. Если после вашего «красивого наследования» каждый новый функционал требует танцев с бубном — возможно, мне пора пересмотреть подход.
-
-
 Ведь, вся эта история с ООП: Вначале кажется, что наследование — гениально! есть готовый класс, добавил пару фич — и вот тебе новая сущность. Но потом приходит осознание, что реальный мир слишком сложен для таких прямолинейных иерархий. Это как пытаться описать все многообразие людей через "человек → работник → офисный работник". А где фрилансеры, где гибридные формы, зарплата и котята?? И вот уже твоя красивая схема трещит по швам.Да,инсайты приходят с годами. Потом принцип подстановки Лисков — это не просто про техническую заменяемость, а про контракты в широком смысле. Когда наследник нарушает неявные ожидания — это как сотрудник, который формально выполняет должностные обязанности, но при этом токсично влияет на всю команду. И самое коварное и кровавое это то,что эти проблемы часто всплывают только в продакшене, когда система уже работает у клиентов.
 
 ИИИИИИИИ.... еще про композицию, композиция хороша не только технически, но и психологически как по мне. Когда проектируем систему из независимых компонентов, наш мозг начинает работать иначе(мой чёт только такой отзыв оставил, вот я его собственно и ...). Вместо "как впихнуть эту фичу в существующую иерархию" ты думаешь "как бы пересобрать эти блоки по-новому". 
@@ -33,3 +52,4 @@ print(issubclass(Doctor, Human))```
 
 Так что мой ответ-я отношусь к наследованию как к острому перцу. Чуть-чуть—вкусно, но перебор испортит любое блюдо. 
 А лучшие системы будут получатся, когда я смогу найти баланс между простотой и гибкостью. 
+
