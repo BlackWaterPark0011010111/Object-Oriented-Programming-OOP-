@@ -16,7 +16,7 @@ class Worker(ABC):
 class Programmer(Worker):
     def __init__(self, name, language):
         super().__init__(name)  #вызываем конструктор 
-        self.language = language  #дополнительный атрибут — язык программирования
+        self.language = language  #дополнительный атрибут - язык программирования
 
     def __str__(self):
         return f"{self.name} codes with {self.language}"

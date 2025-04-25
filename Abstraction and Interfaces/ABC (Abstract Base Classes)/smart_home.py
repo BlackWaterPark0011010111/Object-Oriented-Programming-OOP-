@@ -63,7 +63,7 @@ class SmartHomeSystem:
         #   cls._instance.devices: Dict[str, List[Device]] = defaultdict(list) 
  #            Python не позволяет аннотировать тип переменной при её инициализации 
  #            внутри класса.  Проблема аннотации типов для атрибутов класса должны быть указаны на уровне класса,
- # а не внутри методов или конструктора. devices — это атрибут экземпляра,
+ # а не внутри методов или конструктора. devices - это атрибут экземпляра,
  #   который инициализируется в методе __new__. аннотация типа для devices должна быть   указана на уровне класса.
             cls._instance.devices= defaultdict(list)# Using defaultdict
         return cls._instance
